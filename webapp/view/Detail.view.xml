@@ -1,0 +1,15 @@
+<mvc:View xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	controllerName="minha.app.controller.Detail"
+	displayBlock="true"
+	xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+>
+	<app:CustomData key="component" value="{component}" writeToDom="true"/>
+	<ObjectHeader title="{title}">
+		<attributes>
+			<ObjectAttribute text="{id}" />
+			<ObjectAttribute text="{userId}" />
+			<ObjectAttribute text="{completed}" />
+		</attributes>
+	</ObjectHeader>
+</mvc:View>

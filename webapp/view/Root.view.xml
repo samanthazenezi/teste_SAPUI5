@@ -1,0 +1,12 @@
+<mvc:View xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	controllerName="minha.app.controller.Root"
+	displayBlock="true"
+	xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+>
+	<app:CustomData key="component" value="{component}" writeToDom="true"/>
+	<SearchField width="100%" search="onSearch"/>
+	<List id="list" width="100%" items="{/todos}" mode="SingleSelectMaster" selectionChange="onSelectionChange">
+		<StandardListItem title="{title}" description="{id}" iconDensityAware="false" iconInset="false" />
+	</List>
+</mvc:View>

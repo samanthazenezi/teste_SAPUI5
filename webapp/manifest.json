@@ -1,0 +1,78 @@
+{
+	"sap.app": {
+		"id": "minha.app",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"dataSources": {
+			"todos": {
+				"uri": "https://jsonplaceholder.typicode.com/todos/",
+				"type": "JSON"
+			}
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": [
+			"sap_fiori_3",
+			"sap_belize"
+		]
+	},
+	"sap.ui5": {
+		"rootView": {
+			"viewName": "minha.app.view.Root",
+			"type": "XML"
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"viewPath": "minha.app.view",
+				"controlAggregation": "pages",
+				"controlId": "app",
+				"clearTarget": false,
+				"transition": "slide"
+			},
+			"routes": [{
+				"pattern": "",
+				"name": "root",
+				"target": "root"
+			}, {
+				"pattern": "todos/{todoPath}",
+				"name": "detail",
+				"target": "detail"
+			}],
+			"targets": {
+				"root": {
+					"viewName": "Root"
+				},
+				"detail": {
+					"viewName": "Detail"
+				}
+			}
+		},
+		"models": {
+			"todos": {
+				"type": "sap.ui.model.json.JSONModel",
+				"dataSource": "todos",
+				"settings": {
+					"defaultBindingMode": "OneWay"
+				}
+			}
+		}
+	}
+}
